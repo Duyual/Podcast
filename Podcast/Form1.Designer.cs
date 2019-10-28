@@ -1,6 +1,6 @@
 ﻿namespace Podcast
 {
-    partial class Form1
+    partial class Podcast
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Podcast));
             this.lblUrl = new System.Windows.Forms.Label();
             this.lblUppdatering = new System.Windows.Forms.Label();
             this.lblKategori = new System.Windows.Forms.Label();
@@ -138,10 +139,11 @@
             this.dataGridView2.Size = new System.Drawing.Size(227, 124);
             this.dataGridView2.TabIndex = 7;
             // 
-            // Form1
+            // Podcast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -151,7 +153,8 @@
             this.Controls.Add(this.lblKategori);
             this.Controls.Add(this.lblUppdatering);
             this.Controls.Add(this.lblUrl);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Podcast";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
