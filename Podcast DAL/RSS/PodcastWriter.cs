@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Podcast_DAL
 {
-    public class Class1
+    public class PodcastWriter
     {
+        public PodcastWriter ()
+        {
+
+        }
+
+
     }
 }

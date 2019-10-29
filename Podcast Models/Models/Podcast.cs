@@ -9,7 +9,7 @@ namespace Podcast_Models
     public class Podcast
     {
         public string Title { get; set; }
-        List<Episode> Episodes { get; set; }
+        public List<Episode> Episodes { get; set; }
 
         public Podcast()
         {
