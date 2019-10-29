@@ -16,5 +16,10 @@ namespace Podcast
         {
             InitializeComponent();
         }
+
+        private void listBox12_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,17 +42,17 @@
             this.ColumnKategori = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPodcastInfo = new System.Windows.Forms.Label();
             this.lblKategori2 = new System.Windows.Forms.Label();
-            this.richTextBoxPodcastInfo = new System.Windows.Forms.RichTextBox();
-            this.richTextBoxKategori = new System.Windows.Forms.RichTextBox();
             this.textBoxKategori = new System.Windows.Forms.TextBox();
             this.btnNy = new System.Windows.Forms.Button();
             this.btnSpara = new System.Windows.Forms.Button();
             this.btnTaBort = new System.Windows.Forms.Button();
-            this.richTextBoxBeskrivning = new System.Windows.Forms.RichTextBox();
             this.labelPodBeskrivning = new System.Windows.Forms.Label();
             this.btnNy2 = new System.Windows.Forms.Button();
             this.btnSpara2 = new System.Windows.Forms.Button();
             this.btnTaBort2 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,22 +162,6 @@
             this.lblKategori2.TabIndex = 9;
             this.lblKategori2.Text = "Kategorier";
             // 
-            // richTextBoxPodcastInfo
-            // 
-            this.richTextBoxPodcastInfo.Location = new System.Drawing.Point(31, 260);
-            this.richTextBoxPodcastInfo.Name = "richTextBoxPodcastInfo";
-            this.richTextBoxPodcastInfo.Size = new System.Drawing.Size(443, 96);
-            this.richTextBoxPodcastInfo.TabIndex = 10;
-            this.richTextBoxPodcastInfo.Text = "";
-            // 
-            // richTextBoxKategori
-            // 
-            this.richTextBoxKategori.Location = new System.Drawing.Point(529, 260);
-            this.richTextBoxKategori.Name = "richTextBoxKategori";
-            this.richTextBoxKategori.Size = new System.Drawing.Size(222, 96);
-            this.richTextBoxKategori.TabIndex = 11;
-            this.richTextBoxKategori.Text = "";
-            // 
             // textBoxKategori
             // 
             this.textBoxKategori.Location = new System.Drawing.Point(529, 372);
@@ -211,14 +195,6 @@
             this.btnTaBort.TabIndex = 15;
             this.btnTaBort.Text = "Ta Bort";
             this.btnTaBort.UseVisualStyleBackColor = true;
-            // 
-            // richTextBoxBeskrivning
-            // 
-            this.richTextBoxBeskrivning.Location = new System.Drawing.Point(529, 48);
-            this.richTextBoxBeskrivning.Name = "richTextBoxBeskrivning";
-            this.richTextBoxBeskrivning.Size = new System.Drawing.Size(222, 126);
-            this.richTextBoxBeskrivning.TabIndex = 16;
-            this.richTextBoxBeskrivning.Text = "";
             // 
             // labelPodBeskrivning
             // 
@@ -256,23 +232,48 @@
             this.btnTaBort2.Text = "Ta bort";
             this.btnTaBort2.UseVisualStyleBackColor = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(31, 261);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(452, 95);
+            this.listBox1.TabIndex = 21;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox12_SelectedIndexChanged);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(529, 49);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(222, 121);
+            this.listBox2.TabIndex = 22;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(529, 261);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(222, 95);
+            this.listBox3.TabIndex = 23;
+            // 
             // Podcast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox3);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnTaBort2);
             this.Controls.Add(this.btnSpara2);
             this.Controls.Add(this.btnNy2);
             this.Controls.Add(this.labelPodBeskrivning);
-            this.Controls.Add(this.richTextBoxBeskrivning);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.btnNy);
             this.Controls.Add(this.textBoxKategori);
-            this.Controls.Add(this.richTextBoxKategori);
-            this.Controls.Add(this.richTextBoxPodcastInfo);
             this.Controls.Add(this.lblKategori2);
             this.Controls.Add(this.lblPodcastInfo);
             this.Controls.Add(this.dataGridView1);
@@ -306,17 +307,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnKategori;
         private System.Windows.Forms.Label lblPodcastInfo;
         private System.Windows.Forms.Label lblKategori2;
-        private System.Windows.Forms.RichTextBox richTextBoxPodcastInfo;
-        private System.Windows.Forms.RichTextBox richTextBoxKategori;
         private System.Windows.Forms.TextBox textBoxKategori;
         private System.Windows.Forms.Button btnNy;
         private System.Windows.Forms.Button btnSpara;
         private System.Windows.Forms.Button btnTaBort;
-        private System.Windows.Forms.RichTextBox richTextBoxBeskrivning;
         private System.Windows.Forms.Label labelPodBeskrivning;
         private System.Windows.Forms.Button btnNy2;
         private System.Windows.Forms.Button btnSpara2;
         private System.Windows.Forms.Button btnTaBort2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox3;
     }
 }
 
