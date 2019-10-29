@@ -96,10 +96,15 @@
             // comboBoxUppdatering
             // 
             this.comboBoxUppdatering.FormattingEnabled = true;
+            this.comboBoxUppdatering.Items.AddRange(new object[] {
+            "Var 5:e minut",
+            "Var 10:e minut",
+            "Var 15:e minut"});
             this.comboBoxUppdatering.Location = new System.Drawing.Point(391, 48);
             this.comboBoxUppdatering.Name = "comboBoxUppdatering";
             this.comboBoxUppdatering.Size = new System.Drawing.Size(83, 21);
             this.comboBoxUppdatering.TabIndex = 4;
+            this.comboBoxUppdatering.SelectedIndexChanged += new System.EventHandler(this.comboBoxUppdatering_SelectedIndexChanged);
             // 
             // comboBoxKategori
             // 

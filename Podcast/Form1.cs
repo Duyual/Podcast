@@ -21,5 +21,10 @@ namespace Podcast
         {
 
         }
+
+        private void comboBoxUppdatering_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
