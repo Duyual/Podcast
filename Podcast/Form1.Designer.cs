@@ -43,7 +43,6 @@
             this.lblPodcastInfo = new System.Windows.Forms.Label();
             this.lblKategori2 = new System.Windows.Forms.Label();
             this.richTextBoxPodcastInfo = new System.Windows.Forms.RichTextBox();
-            this.richTextBoxKategori = new System.Windows.Forms.RichTextBox();
             this.textBoxKategori = new System.Windows.Forms.TextBox();
             this.btnNy = new System.Windows.Forms.Button();
             this.btnSpara = new System.Windows.Forms.Button();
@@ -53,6 +52,7 @@
             this.btnNy2 = new System.Windows.Forms.Button();
             this.btnSpara2 = new System.Windows.Forms.Button();
             this.btnTaBort2 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +108,7 @@
             this.comboBoxKategori.Name = "comboBoxKategori";
             this.comboBoxKategori.Size = new System.Drawing.Size(102, 21);
             this.comboBoxKategori.TabIndex = 5;
+            this.comboBoxKategori.SelectedIndexChanged += new System.EventHandler(this.comboBoxKategori_SelectedIndexChanged_1);
             // 
             // dataGridView1
             // 
@@ -121,6 +122,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(443, 82);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ColumnEpisode
             // 
@@ -170,20 +172,13 @@
             this.richTextBoxPodcastInfo.TabIndex = 10;
             this.richTextBoxPodcastInfo.Text = "";
             // 
-            // richTextBoxKategori
-            // 
-            this.richTextBoxKategori.Location = new System.Drawing.Point(529, 260);
-            this.richTextBoxKategori.Name = "richTextBoxKategori";
-            this.richTextBoxKategori.Size = new System.Drawing.Size(222, 96);
-            this.richTextBoxKategori.TabIndex = 11;
-            this.richTextBoxKategori.Text = "";
-            // 
             // textBoxKategori
             // 
             this.textBoxKategori.Location = new System.Drawing.Point(529, 372);
             this.textBoxKategori.Name = "textBoxKategori";
             this.textBoxKategori.Size = new System.Drawing.Size(222, 20);
             this.textBoxKategori.TabIndex = 12;
+            this.textBoxKategori.TextChanged += new System.EventHandler(this.textBoxKategori_TextChanged);
             // 
             // btnNy
             // 
@@ -237,6 +232,7 @@
             this.btnNy2.TabIndex = 18;
             this.btnNy2.Text = "Ny";
             this.btnNy2.UseVisualStyleBackColor = true;
+            this.btnNy2.Click += new System.EventHandler(this.btnNy2_Click);
             // 
             // btnSpara2
             // 
@@ -256,12 +252,22 @@
             this.btnTaBort2.Text = "Ta bort";
             this.btnTaBort2.UseVisualStyleBackColor = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(529, 258);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(222, 95);
+            this.listBox1.TabIndex = 21;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
+            // 
             // Podcast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnTaBort2);
             this.Controls.Add(this.btnSpara2);
             this.Controls.Add(this.btnNy2);
@@ -271,7 +277,6 @@
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.btnNy);
             this.Controls.Add(this.textBoxKategori);
-            this.Controls.Add(this.richTextBoxKategori);
             this.Controls.Add(this.richTextBoxPodcastInfo);
             this.Controls.Add(this.lblKategori2);
             this.Controls.Add(this.lblPodcastInfo);
@@ -307,7 +312,6 @@
         private System.Windows.Forms.Label lblPodcastInfo;
         private System.Windows.Forms.Label lblKategori2;
         private System.Windows.Forms.RichTextBox richTextBoxPodcastInfo;
-        private System.Windows.Forms.RichTextBox richTextBoxKategori;
         private System.Windows.Forms.TextBox textBoxKategori;
         private System.Windows.Forms.Button btnNy;
         private System.Windows.Forms.Button btnSpara;
@@ -317,6 +321,7 @@
         private System.Windows.Forms.Button btnNy2;
         private System.Windows.Forms.Button btnSpara2;
         private System.Windows.Forms.Button btnTaBort2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
