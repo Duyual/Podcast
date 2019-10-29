@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Podcast
 {
-    public partial class Form1 : Form
+    public partial class Podcast : Form
     {
-        public Form1()
+        public Podcast()
         {
             InitializeComponent();
         }
