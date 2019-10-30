@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Podcast_BLL;
+using Podcast_Models.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +18,9 @@ namespace Podcast
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            PodcastHandler podHandler = new PodcastHandler();
+            podHandler.StartUpdateFeed();
             Application.Run(new Podcast());
         }
     }
