@@ -68,7 +68,9 @@ namespace Podcast_BLL
                 //If the podcast isn't the same, change it.
                 if (!newPod.Equals(oldPod))
                 {
+                    int updateInterval = podcastColl[oldIndex].UpdateInterval;
                     podcastColl[oldIndex] = newPod;
+                    podcastColl[oldIndex].UpdateInterval = updateInterval;
                     //INSERT UPDATEINTERVAL INTO podcastColl[oldIndex] HERE FROM FORM
                     podcastColl.Serialize();
                 }

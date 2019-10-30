@@ -1,6 +1,6 @@
-﻿namespace Podcast
+﻿namespace Podcast_GUI
 {
-    partial class Podcast
+    partial class PodcastForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Podcast));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PodcastForm));
             this.lblUrl = new System.Windows.Forms.Label();
             this.lblIntervall = new System.Windows.Forms.Label();
-            this.lblKategori = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
             this.textBoxUrl = new System.Windows.Forms.TextBox();
             this.comboBoxUppdatering = new System.Windows.Forms.ComboBox();
-            this.comboBoxKategori = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnEpisode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNamn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFrekvens = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnKategori = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.lblPodcastInfo = new System.Windows.Forms.Label();
             this.lblKategori2 = new System.Windows.Forms.Label();
             this.textBoxKategori = new System.Windows.Forms.TextBox();
@@ -50,10 +45,15 @@
             this.btnNy2 = new System.Windows.Forms.Button();
             this.btnSpara2 = new System.Windows.Forms.Button();
             this.btnTaBort2 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxDescription = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.listBoxCategory = new System.Windows.Forms.ListBox();
+            this.gwdPodcasts = new System.Windows.Forms.DataGridView();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAvsnitt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFrequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gwdPodcasts)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUrl
@@ -62,7 +62,7 @@
             this.lblUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUrl.Location = new System.Drawing.Point(28, 18);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(38, 16);
+            this.lblUrl.Size = new System.Drawing.Size(46, 20);
             this.lblUrl.TabIndex = 0;
             this.lblUrl.Text = "URL";
             // 
@@ -72,19 +72,19 @@
             this.lblIntervall.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIntervall.Location = new System.Drawing.Point(388, 18);
             this.lblIntervall.Name = "lblIntervall";
-            this.lblIntervall.Size = new System.Drawing.Size(63, 16);
+            this.lblIntervall.Size = new System.Drawing.Size(76, 20);
             this.lblIntervall.TabIndex = 1;
             this.lblIntervall.Text = "Intervall";
             // 
-            // lblKategori
+            // lblCategory
             // 
-            this.lblKategori.AutoSize = true;
-            this.lblKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKategori.Location = new System.Drawing.Point(229, 18);
-            this.lblKategori.Name = "lblKategori";
-            this.lblKategori.Size = new System.Drawing.Size(66, 16);
-            this.lblKategori.TabIndex = 2;
-            this.lblKategori.Text = "Kategori";
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Location = new System.Drawing.Point(229, 18);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(79, 20);
+            this.lblCategory.TabIndex = 2;
+            this.lblCategory.Text = "Kategori";
             // 
             // textBoxUrl
             // 
@@ -101,54 +101,21 @@
             this.comboBoxUppdatering.Size = new System.Drawing.Size(83, 21);
             this.comboBoxUppdatering.TabIndex = 4;
             // 
-            // comboBoxKategori
+            // comboBoxCategory
             // 
-            this.comboBoxKategori.FormattingEnabled = true;
-            this.comboBoxKategori.Location = new System.Drawing.Point(232, 48);
-            this.comboBoxKategori.Name = "comboBoxKategori";
-            this.comboBoxKategori.Size = new System.Drawing.Size(102, 21);
-            this.comboBoxKategori.TabIndex = 5;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnEpisode,
-            this.ColumnNamn,
-            this.ColumnFrekvens,
-            this.ColumnKategori});
-            this.dataGridView1.Location = new System.Drawing.Point(31, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 82);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // ColumnEpisode
-            // 
-            this.ColumnEpisode.HeaderText = "Episode";
-            this.ColumnEpisode.Name = "ColumnEpisode";
-            // 
-            // ColumnNamn
-            // 
-            this.ColumnNamn.HeaderText = "Namn";
-            this.ColumnNamn.Name = "ColumnNamn";
-            // 
-            // ColumnFrekvens
-            // 
-            this.ColumnFrekvens.HeaderText = "Frekvens";
-            this.ColumnFrekvens.Name = "ColumnFrekvens";
-            // 
-            // ColumnKategori
-            // 
-            this.ColumnKategori.HeaderText = "Kategori";
-            this.ColumnKategori.Name = "ColumnKategori";
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Location = new System.Drawing.Point(232, 48);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(102, 21);
+            this.comboBoxCategory.TabIndex = 5;
             // 
             // lblPodcastInfo
             // 
             this.lblPodcastInfo.AutoSize = true;
             this.lblPodcastInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPodcastInfo.Location = new System.Drawing.Point(28, 229);
+            this.lblPodcastInfo.Location = new System.Drawing.Point(27, 336);
             this.lblPodcastInfo.Name = "lblPodcastInfo";
-            this.lblPodcastInfo.Size = new System.Drawing.Size(145, 16);
+            this.lblPodcastInfo.Size = new System.Drawing.Size(177, 20);
             this.lblPodcastInfo.TabIndex = 8;
             this.lblPodcastInfo.Text = "Podcast information";
             // 
@@ -156,22 +123,22 @@
             // 
             this.lblKategori2.AutoSize = true;
             this.lblKategori2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKategori2.Location = new System.Drawing.Point(526, 229);
+            this.lblKategori2.Location = new System.Drawing.Point(612, 228);
             this.lblKategori2.Name = "lblKategori2";
-            this.lblKategori2.Size = new System.Drawing.Size(80, 16);
+            this.lblKategori2.Size = new System.Drawing.Size(96, 20);
             this.lblKategori2.TabIndex = 9;
             this.lblKategori2.Text = "Kategorier";
             // 
             // textBoxKategori
             // 
-            this.textBoxKategori.Location = new System.Drawing.Point(529, 372);
+            this.textBoxKategori.Location = new System.Drawing.Point(606, 372);
             this.textBoxKategori.Name = "textBoxKategori";
             this.textBoxKategori.Size = new System.Drawing.Size(222, 20);
             this.textBoxKategori.TabIndex = 12;
             // 
             // btnNy
             // 
-            this.btnNy.Location = new System.Drawing.Point(31, 193);
+            this.btnNy.Location = new System.Drawing.Point(31, 298);
             this.btnNy.Name = "btnNy";
             this.btnNy.Size = new System.Drawing.Size(80, 23);
             this.btnNy.TabIndex = 13;
@@ -180,7 +147,7 @@
             // 
             // btnSpara
             // 
-            this.btnSpara.Location = new System.Drawing.Point(139, 193);
+            this.btnSpara.Location = new System.Drawing.Point(130, 298);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(74, 23);
             this.btnSpara.TabIndex = 14;
@@ -189,7 +156,7 @@
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(246, 193);
+            this.btnTaBort.Location = new System.Drawing.Point(246, 298);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(88, 23);
             this.btnTaBort.TabIndex = 15;
@@ -199,15 +166,15 @@
             // labelPodBeskrivning
             // 
             this.labelPodBeskrivning.AutoSize = true;
-            this.labelPodBeskrivning.Location = new System.Drawing.Point(526, 21);
+            this.labelPodBeskrivning.Location = new System.Drawing.Point(623, 18);
             this.labelPodBeskrivning.Name = "labelPodBeskrivning";
-            this.labelPodBeskrivning.Size = new System.Drawing.Size(35, 13);
+            this.labelPodBeskrivning.Size = new System.Drawing.Size(41, 15);
             this.labelPodBeskrivning.TabIndex = 17;
             this.labelPodBeskrivning.Text = "label1";
             // 
             // btnNy2
             // 
-            this.btnNy2.Location = new System.Drawing.Point(529, 415);
+            this.btnNy2.Location = new System.Drawing.Point(606, 415);
             this.btnNy2.Name = "btnNy2";
             this.btnNy2.Size = new System.Drawing.Size(53, 23);
             this.btnNy2.TabIndex = 18;
@@ -216,7 +183,7 @@
             // 
             // btnSpara2
             // 
-            this.btnSpara2.Location = new System.Drawing.Point(606, 415);
+            this.btnSpara2.Location = new System.Drawing.Point(681, 415);
             this.btnSpara2.Name = "btnSpara2";
             this.btnSpara2.Size = new System.Drawing.Size(58, 23);
             this.btnSpara2.TabIndex = 19;
@@ -225,47 +192,90 @@
             // 
             // btnTaBort2
             // 
-            this.btnTaBort2.Location = new System.Drawing.Point(688, 415);
+            this.btnTaBort2.Location = new System.Drawing.Point(765, 415);
             this.btnTaBort2.Name = "btnTaBort2";
             this.btnTaBort2.Size = new System.Drawing.Size(63, 23);
             this.btnTaBort2.TabIndex = 20;
             this.btnTaBort2.Text = "Ta bort";
             this.btnTaBort2.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // listBoxDescription
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(31, 261);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(452, 95);
-            this.listBox1.TabIndex = 21;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox12_SelectedIndexChanged);
+            this.listBoxDescription.FormattingEnabled = true;
+            this.listBoxDescription.Location = new System.Drawing.Point(32, 372);
+            this.listBoxDescription.Name = "listBoxDescription";
+            this.listBoxDescription.Size = new System.Drawing.Size(452, 95);
+            this.listBoxDescription.TabIndex = 21;
+            this.listBoxDescription.SelectedIndexChanged += new System.EventHandler(this.listBox12_SelectedIndexChanged);
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(529, 49);
+            this.listBox2.Location = new System.Drawing.Point(616, 49);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(222, 121);
             this.listBox2.TabIndex = 22;
             // 
-            // listBox3
+            // listBoxCategory
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(529, 261);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(222, 95);
-            this.listBox3.TabIndex = 23;
+            this.listBoxCategory.FormattingEnabled = true;
+            this.listBoxCategory.Location = new System.Drawing.Point(606, 261);
+            this.listBoxCategory.Name = "listBoxCategory";
+            this.listBoxCategory.Size = new System.Drawing.Size(222, 95);
+            this.listBoxCategory.TabIndex = 23;
             // 
-            // Podcast
+            // gwdPodcasts
+            // 
+            this.gwdPodcasts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gwdPodcasts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colName,
+            this.colAvsnitt,
+            this.colCategory,
+            this.colFrequence});
+            this.gwdPodcasts.Location = new System.Drawing.Point(31, 93);
+            this.gwdPodcasts.Name = "gwdPodcasts";
+            this.gwdPodcasts.RowHeadersWidth = 51;
+            this.gwdPodcasts.Size = new System.Drawing.Size(557, 199);
+            this.gwdPodcasts.TabIndex = 24;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Namn";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.Width = 125;
+            // 
+            // colAvsnitt
+            // 
+            this.colAvsnitt.HeaderText = "Avsnitt";
+            this.colAvsnitt.MinimumWidth = 6;
+            this.colAvsnitt.Name = "colAvsnitt";
+            this.colAvsnitt.Width = 125;
+            // 
+            // colCategory
+            // 
+            this.colCategory.HeaderText = "Kategori";
+            this.colCategory.MinimumWidth = 6;
+            this.colCategory.Name = "colCategory";
+            this.colCategory.Width = 125;
+            // 
+            // colFrequence
+            // 
+            this.colFrequence.HeaderText = "Frekvens";
+            this.colFrequence.MinimumWidth = 6;
+            this.colFrequence.Name = "colFrequence";
+            this.colFrequence.Width = 125;
+            // 
+            // PodcastForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox3);
+            this.ClientSize = new System.Drawing.Size(1159, 584);
+            this.Controls.Add(this.gwdPodcasts);
+            this.Controls.Add(this.listBoxCategory);
             this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxDescription);
             this.Controls.Add(this.btnTaBort2);
             this.Controls.Add(this.btnSpara2);
             this.Controls.Add(this.btnNy2);
@@ -276,17 +286,16 @@
             this.Controls.Add(this.textBoxKategori);
             this.Controls.Add(this.lblKategori2);
             this.Controls.Add(this.lblPodcastInfo);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBoxKategori);
+            this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.comboBoxUppdatering);
             this.Controls.Add(this.textBoxUrl);
-            this.Controls.Add(this.lblKategori);
+            this.Controls.Add(this.lblCategory);
             this.Controls.Add(this.lblIntervall);
             this.Controls.Add(this.lblUrl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Podcast";
+            this.Name = "PodcastForm";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gwdPodcasts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,15 +305,10 @@
 
         private System.Windows.Forms.Label lblUrl;
         private System.Windows.Forms.Label lblIntervall;
-        private System.Windows.Forms.Label lblKategori;
+        private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.TextBox textBoxUrl;
         private System.Windows.Forms.ComboBox comboBoxUppdatering;
-        private System.Windows.Forms.ComboBox comboBoxKategori;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEpisode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNamn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFrekvens;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnKategori;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Label lblPodcastInfo;
         private System.Windows.Forms.Label lblKategori2;
         private System.Windows.Forms.TextBox textBoxKategori;
@@ -315,9 +319,14 @@
         private System.Windows.Forms.Button btnNy2;
         private System.Windows.Forms.Button btnSpara2;
         private System.Windows.Forms.Button btnTaBort2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxDescription;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox listBoxCategory;
+        private System.Windows.Forms.DataGridView gwdPodcasts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAvsnitt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFrequence;
     }
 }
 

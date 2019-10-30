@@ -38,5 +38,21 @@ namespace Podcast_Models.Models
                 }
             }
         }
+
+        public override bool Equals(object obj)
+        {
+            PodcastCollection podcasts = obj as PodcastCollection;
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (!this[i].Equals(podcasts[i]))
+                    return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

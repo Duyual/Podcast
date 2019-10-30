@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Podcast
+namespace Podcast_GUI
 {
     static class Program
     {
@@ -18,10 +18,7 @@ namespace Podcast
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            PodcastHandler podHandler = new PodcastHandler();
-            podHandler.StartUpdateFeed();
-            Application.Run(new Podcast());
+            Application.Run(new PodcastForm());
         }
     }
 }
