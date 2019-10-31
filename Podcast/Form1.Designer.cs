@@ -113,6 +113,7 @@
             this.comboBoxKategori.Name = "comboBoxKategori";
             this.comboBoxKategori.Size = new System.Drawing.Size(102, 21);
             this.comboBoxKategori.TabIndex = 5;
+            this.comboBoxKategori.SelectedIndexChanged += new System.EventHandler(this.comboBoxKategori_SelectedIndexChanged);
             // 
             // dataGridView1
             // 

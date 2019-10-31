@@ -26,5 +26,10 @@ namespace Podcast
         {
 
         }
+
+        private void comboBoxKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
