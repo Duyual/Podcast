@@ -33,19 +33,18 @@
             this.lblIntervall = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.textBoxUrl = new System.Windows.Forms.TextBox();
-            this.comboBoxUppdatering = new System.Windows.Forms.ComboBox();
+            this.comboBoxUpdate = new System.Windows.Forms.ComboBox();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.lblPodcastInfo = new System.Windows.Forms.Label();
             this.lblKategori2 = new System.Windows.Forms.Label();
             this.textBoxCategory = new System.Windows.Forms.TextBox();
-            this.btnNy = new System.Windows.Forms.Button();
-            this.btnSpara = new System.Windows.Forms.Button();
-            this.btnTaBort = new System.Windows.Forms.Button();
+            this.btnNewPodcast = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnRemovePodcast = new System.Windows.Forms.Button();
             this.labelPodBeskrivning = new System.Windows.Forms.Label();
             this.btnNewCategory = new System.Windows.Forms.Button();
             this.btnTaBort2 = new System.Windows.Forms.Button();
             this.listBoxDescription = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBoxCategory = new System.Windows.Forms.ListBox();
             this.gwdPodcasts = new System.Windows.Forms.DataGridView();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +52,7 @@
             this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFrequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSpara2 = new System.Windows.Forms.Button();
+            this.listBoxPodcasts = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.gwdPodcasts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,13 +93,21 @@
             this.textBoxUrl.Size = new System.Drawing.Size(154, 20);
             this.textBoxUrl.TabIndex = 3;
             // 
-            // comboBoxUppdatering
+            // comboBoxUpdate
             // 
-            this.comboBoxUppdatering.FormattingEnabled = true;
-            this.comboBoxUppdatering.Location = new System.Drawing.Point(391, 48);
-            this.comboBoxUppdatering.Name = "comboBoxUppdatering";
-            this.comboBoxUppdatering.Size = new System.Drawing.Size(83, 21);
-            this.comboBoxUppdatering.TabIndex = 4;
+            this.comboBoxUpdate.FormattingEnabled = true;
+            this.comboBoxUpdate.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "5",
+            "10",
+            "20",
+            "30",
+            "60"});
+            this.comboBoxUpdate.Location = new System.Drawing.Point(391, 48);
+            this.comboBoxUpdate.Name = "comboBoxUpdate";
+            this.comboBoxUpdate.Size = new System.Drawing.Size(83, 21);
+            this.comboBoxUpdate.TabIndex = 4;
             // 
             // comboBoxCategory
             // 
@@ -137,32 +145,35 @@
             this.textBoxCategory.Size = new System.Drawing.Size(222, 20);
             this.textBoxCategory.TabIndex = 12;
             // 
-            // btnNy
+            // btnNewPodcast
             // 
-            this.btnNy.Location = new System.Drawing.Point(31, 298);
-            this.btnNy.Name = "btnNy";
-            this.btnNy.Size = new System.Drawing.Size(80, 23);
-            this.btnNy.TabIndex = 13;
-            this.btnNy.Text = "Ny";
-            this.btnNy.UseVisualStyleBackColor = true;
+            this.btnNewPodcast.Location = new System.Drawing.Point(31, 298);
+            this.btnNewPodcast.Name = "btnNewPodcast";
+            this.btnNewPodcast.Size = new System.Drawing.Size(80, 23);
+            this.btnNewPodcast.TabIndex = 13;
+            this.btnNewPodcast.Text = "Ny";
+            this.btnNewPodcast.UseVisualStyleBackColor = true;
+            this.btnNewPodcast.Click += new System.EventHandler(this.btnNewPodcast_Click);
             // 
-            // btnSpara
+            // btnSave
             // 
-            this.btnSpara.Location = new System.Drawing.Point(130, 298);
-            this.btnSpara.Name = "btnSpara";
-            this.btnSpara.Size = new System.Drawing.Size(74, 23);
-            this.btnSpara.TabIndex = 14;
-            this.btnSpara.Text = "Spara";
-            this.btnSpara.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(130, 298);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(74, 23);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Spara";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnTaBort
+            // btnRemovePodcast
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(246, 298);
-            this.btnTaBort.Name = "btnTaBort";
-            this.btnTaBort.Size = new System.Drawing.Size(88, 23);
-            this.btnTaBort.TabIndex = 15;
-            this.btnTaBort.Text = "Ta Bort";
-            this.btnTaBort.UseVisualStyleBackColor = true;
+            this.btnRemovePodcast.Location = new System.Drawing.Point(246, 298);
+            this.btnRemovePodcast.Name = "btnRemovePodcast";
+            this.btnRemovePodcast.Size = new System.Drawing.Size(88, 23);
+            this.btnRemovePodcast.TabIndex = 15;
+            this.btnRemovePodcast.Text = "Ta Bort";
+            this.btnRemovePodcast.UseVisualStyleBackColor = true;
+            this.btnRemovePodcast.Click += new System.EventHandler(this.btnRemovePodcast_Click);
             // 
             // labelPodBeskrivning
             // 
@@ -200,14 +211,6 @@
             this.listBoxDescription.Size = new System.Drawing.Size(452, 95);
             this.listBoxDescription.TabIndex = 21;
             this.listBoxDescription.SelectedIndexChanged += new System.EventHandler(this.listBox12_SelectedIndexChanged);
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(616, 49);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(222, 121);
-            this.listBox2.TabIndex = 22;
             // 
             // listBoxCategory
             // 
@@ -268,28 +271,37 @@
             this.btnSpara2.Text = "Spara";
             this.btnSpara2.UseVisualStyleBackColor = true;
             // 
+            // listBoxPodcasts
+            // 
+            this.listBoxPodcasts.FormattingEnabled = true;
+            this.listBoxPodcasts.Location = new System.Drawing.Point(616, 93);
+            this.listBoxPodcasts.Name = "listBoxPodcasts";
+            this.listBoxPodcasts.Size = new System.Drawing.Size(212, 95);
+            this.listBoxPodcasts.TabIndex = 25;
+            this.listBoxPodcasts.SelectedIndexChanged += new System.EventHandler(this.listBoxPodcasts_SelectedIndexChanged);
+            // 
             // PodcastForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1159, 584);
+            this.Controls.Add(this.listBoxPodcasts);
             this.Controls.Add(this.gwdPodcasts);
             this.Controls.Add(this.listBoxCategory);
-            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBoxDescription);
             this.Controls.Add(this.btnTaBort2);
             this.Controls.Add(this.btnSpara2);
             this.Controls.Add(this.btnNewCategory);
             this.Controls.Add(this.labelPodBeskrivning);
-            this.Controls.Add(this.btnTaBort);
-            this.Controls.Add(this.btnSpara);
-            this.Controls.Add(this.btnNy);
+            this.Controls.Add(this.btnRemovePodcast);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnNewPodcast);
             this.Controls.Add(this.textBoxCategory);
             this.Controls.Add(this.lblKategori2);
             this.Controls.Add(this.lblPodcastInfo);
             this.Controls.Add(this.comboBoxCategory);
-            this.Controls.Add(this.comboBoxUppdatering);
+            this.Controls.Add(this.comboBoxUpdate);
             this.Controls.Add(this.textBoxUrl);
             this.Controls.Add(this.lblCategory);
             this.Controls.Add(this.lblIntervall);
@@ -309,19 +321,18 @@
         private System.Windows.Forms.Label lblIntervall;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.TextBox textBoxUrl;
-        private System.Windows.Forms.ComboBox comboBoxUppdatering;
+        private System.Windows.Forms.ComboBox comboBoxUpdate;
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Label lblPodcastInfo;
         private System.Windows.Forms.Label lblKategori2;
         private System.Windows.Forms.TextBox textBoxCategory;
-        private System.Windows.Forms.Button btnNy;
-        private System.Windows.Forms.Button btnSpara;
-        private System.Windows.Forms.Button btnTaBort;
+        private System.Windows.Forms.Button btnNewPodcast;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnRemovePodcast;
         private System.Windows.Forms.Label labelPodBeskrivning;
         private System.Windows.Forms.Button btnNewCategory;
         private System.Windows.Forms.Button btnTaBort2;
         private System.Windows.Forms.ListBox listBoxDescription;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBoxCategory;
         private System.Windows.Forms.DataGridView gwdPodcasts;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
@@ -329,6 +340,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFrequence;
         private System.Windows.Forms.Button btnSpara2;
+        private System.Windows.Forms.ListBox listBoxPodcasts;
     }
 }
 

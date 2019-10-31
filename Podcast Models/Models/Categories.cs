@@ -14,20 +14,23 @@ namespace Podcast_Models.Models
 
         public Categories Deserialize()
         {
+            CreateFileIfNotExists("categories.json");
             JsonSerializer serializer = new JsonSerializer();
-            try
+            using (StreamReader reader = new StreamReader("categories.json"))
             {
-                using (StreamReader reader = new StreamReader("categories.json"))
+                using (JsonReader jsonReader = new JsonTextReader(reader))
                 {
-                    using (JsonReader jsonReader = new JsonTextReader(reader))
-                    {
-                        return serializer.Deserialize<Categories>(jsonReader);
-                    }
+                    return serializer.Deserialize<Categories>(jsonReader);
                 }
-            } catch(FileNotFoundException)
+            }
+        }
+
+        public void CreateFileIfNotExists(string filename)
+        {
+            if (!File.Exists(filename))
             {
-                return null;
-            } 
+                File.Create(filename);
+            }
         }
 
         public void Serialize()

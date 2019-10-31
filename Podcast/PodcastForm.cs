@@ -19,13 +19,14 @@ namespace Podcast_GUI
 
         private PodcastCollection podcasts;
         private Podcast selectedPod;
-        CategoryHandler categoryHandler;
+        private PodcastHandler podHandler;
+        private CategoryHandler categoryHandler;
 
         public PodcastForm()
         {
             InitializeComponent();
 
-            PodcastHandler podHandler = new PodcastHandler();
+            podHandler = new PodcastHandler();
             categoryHandler = new CategoryHandler();
 
             podHandler.StartUpdateFeed();
@@ -58,8 +59,9 @@ namespace Podcast_GUI
                     {
                         //Change podcast
                         podcasts = pod;
-                        RemovePodcastsUI();
-                        AddPodcastsUI();
+                        RemoveEpisodesUI();
+                        UpdatePodcastsUI();
+                        //AddEpisodesUI(selectedPod);
                     }
                 }
             }
@@ -67,20 +69,42 @@ namespace Podcast_GUI
 
         public void AddPodcastsUI()
         {
-            foreach(Podcast pod in podcasts)
+            foreach (Podcast pod in podcasts)
             {
-                string[] row = new string[4];
-                row[0] = pod.Title;
-                row[3] = pod.UpdateInterval.ToString();
-                foreach(Episode episode in pod.Episodes)
-                {
-                    row[1] = episode.Title;
-                    gwdPodcasts.Rows.Add(row);
-                }
+                listBoxPodcasts.DisplayMember = "Title";
+                listBoxPodcasts.Items.Add(pod);
             }
         }
 
-        public void RemovePodcastsUI()
+        public void UpdatePodcastsUI()
+        {
+            int selectedIndex = listBoxPodcasts.SelectedIndex;
+            listBoxPodcasts.Items.Clear();
+            AddPodcastsUI();
+            if(listBoxPodcasts.Items.Count > selectedIndex)
+                listBoxPodcasts.SelectedIndex = selectedIndex;
+        }
+
+        public void UpdateEpisodesUI(Podcast pod)
+        {
+            RemoveEpisodesUI();
+            AddEpisodesUI(pod);
+        }
+
+        public void AddEpisodesUI(Podcast pod)
+        {
+            string[] row = new string[4];
+            row[0] = pod.Title;
+            row[2] = pod.Category;
+            row[3] = pod.UpdateInterval.ToString();
+            foreach (Episode episode in pod.Episodes)
+            {
+                row[1] = episode.Title;
+                gwdPodcasts.Rows.Add(row);
+            }
+        }
+
+        public void RemoveEpisodesUI()
         {
             gwdPodcasts.Rows.Clear();
         }
@@ -107,6 +131,13 @@ namespace Podcast_GUI
             comboBoxCategory.Items.Add(category);
         }
 
+        public void UpdatePodcastData(Podcast pod)
+        {
+            textBoxUrl.Text = pod.Link;
+            comboBoxUpdate.SelectedItem = pod.UpdateInterval.ToString();
+            comboBoxCategory.SelectedItem = pod.Category;
+        }
+
         private void listBox12_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (Podcast pod in podcasts)
@@ -117,7 +148,7 @@ namespace Podcast_GUI
 
                 }
             }
-            
+
         }
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -135,6 +166,61 @@ namespace Podcast_GUI
                     AddCategoryUI(textBoxCategory.Text);
                 }
             }
+        }
+
+        private void listBoxPodcasts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //-1 = Out of bounds
+            if (listBoxPodcasts.SelectedIndex != -1)
+            {
+                Podcast pod = listBoxPodcasts.SelectedItem as Podcast;
+                UpdateEpisodesUI(pod);
+                UpdatePodcastData(pod);
+            }
+        }
+
+        private void btnNewPodcast_Click(object sender, EventArgs e)
+        {
+            string link = textBoxUrl.Text;
+            string category = comboBoxCategory.SelectedItem.ToString();
+
+            if (!IsEmptyOrNull(link) && !IsEmptyOrNull(category) && !IsEmptyOrNull(comboBoxUpdate.SelectedItem.ToString()))
+            {
+                int update = Int32.Parse(comboBoxUpdate.SelectedItem.ToString());
+                podHandler.AddPodcast(link, category, update);
+                UpdatePodcastsUI();
+            }
+        }
+
+        public bool IsEmptyOrNull(string str)
+        {
+            return (str == null || str == String.Empty) ? true : false;
+        }
+
+        private void btnRemovePodcast_Click(object sender, EventArgs e)
+        {
+            Podcast removedPod = listBoxPodcasts.SelectedItem as Podcast;
+            //listBoxPodcasts.Items.Remove(removedPod);
+            podcasts.Remove(removedPod);
+            podcasts.Serialize();
+            UpdatePodcastsUI();
+            
+
+        }
+
+        private async void btnSave_Click(object sender, EventArgs e)
+        {
+            Podcast changedPod = listBoxPodcasts.SelectedItem as Podcast;
+            int index = podcasts.FindIndex(pod => pod.Equals(changedPod));
+
+            string category = comboBoxCategory.SelectedItem.ToString();
+            string link = textBoxUrl.Text;
+            int update = Int32.Parse(comboBoxUpdate.SelectedItem.ToString());
+
+            await podHandler.UpdatePodcast(changedPod, link, category, update);
+            PodcastCollection podColl = new PodcastCollection();
+            podcasts = podColl.Deserialize();
+            UpdatePodcastsUI();
         }
     }
 }
