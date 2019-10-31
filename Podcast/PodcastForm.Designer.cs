@@ -37,13 +37,12 @@
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.lblPodcastInfo = new System.Windows.Forms.Label();
             this.lblKategori2 = new System.Windows.Forms.Label();
-            this.textBoxKategori = new System.Windows.Forms.TextBox();
+            this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.btnNy = new System.Windows.Forms.Button();
             this.btnSpara = new System.Windows.Forms.Button();
             this.btnTaBort = new System.Windows.Forms.Button();
             this.labelPodBeskrivning = new System.Windows.Forms.Label();
-            this.btnNy2 = new System.Windows.Forms.Button();
-            this.btnSpara2 = new System.Windows.Forms.Button();
+            this.btnNewCategory = new System.Windows.Forms.Button();
             this.btnTaBort2 = new System.Windows.Forms.Button();
             this.listBoxDescription = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -53,6 +52,7 @@
             this.colAvsnitt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFrequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSpara2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gwdPodcasts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +108,7 @@
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(102, 21);
             this.comboBoxCategory.TabIndex = 5;
+            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
             // 
             // lblPodcastInfo
             // 
@@ -129,12 +130,12 @@
             this.lblKategori2.TabIndex = 9;
             this.lblKategori2.Text = "Kategorier";
             // 
-            // textBoxKategori
+            // textBoxCategory
             // 
-            this.textBoxKategori.Location = new System.Drawing.Point(606, 372);
-            this.textBoxKategori.Name = "textBoxKategori";
-            this.textBoxKategori.Size = new System.Drawing.Size(222, 20);
-            this.textBoxKategori.TabIndex = 12;
+            this.textBoxCategory.Location = new System.Drawing.Point(606, 372);
+            this.textBoxCategory.Name = "textBoxCategory";
+            this.textBoxCategory.Size = new System.Drawing.Size(222, 20);
+            this.textBoxCategory.TabIndex = 12;
             // 
             // btnNy
             // 
@@ -172,23 +173,15 @@
             this.labelPodBeskrivning.TabIndex = 17;
             this.labelPodBeskrivning.Text = "label1";
             // 
-            // btnNy2
+            // btnNewCategory
             // 
-            this.btnNy2.Location = new System.Drawing.Point(606, 415);
-            this.btnNy2.Name = "btnNy2";
-            this.btnNy2.Size = new System.Drawing.Size(53, 23);
-            this.btnNy2.TabIndex = 18;
-            this.btnNy2.Text = "Ny";
-            this.btnNy2.UseVisualStyleBackColor = true;
-            // 
-            // btnSpara2
-            // 
-            this.btnSpara2.Location = new System.Drawing.Point(681, 415);
-            this.btnSpara2.Name = "btnSpara2";
-            this.btnSpara2.Size = new System.Drawing.Size(58, 23);
-            this.btnSpara2.TabIndex = 19;
-            this.btnSpara2.Text = "Spara";
-            this.btnSpara2.UseVisualStyleBackColor = true;
+            this.btnNewCategory.Location = new System.Drawing.Point(606, 415);
+            this.btnNewCategory.Name = "btnNewCategory";
+            this.btnNewCategory.Size = new System.Drawing.Size(53, 23);
+            this.btnNewCategory.TabIndex = 18;
+            this.btnNewCategory.Text = "Ny";
+            this.btnNewCategory.UseVisualStyleBackColor = true;
+            this.btnNewCategory.Click += new System.EventHandler(this.btnNewCategory_Click);
             // 
             // btnTaBort2
             // 
@@ -266,6 +259,15 @@
             this.colFrequence.Name = "colFrequence";
             this.colFrequence.Width = 125;
             // 
+            // btnSpara2
+            // 
+            this.btnSpara2.Location = new System.Drawing.Point(681, 415);
+            this.btnSpara2.Name = "btnSpara2";
+            this.btnSpara2.Size = new System.Drawing.Size(58, 23);
+            this.btnSpara2.TabIndex = 19;
+            this.btnSpara2.Text = "Spara";
+            this.btnSpara2.UseVisualStyleBackColor = true;
+            // 
             // PodcastForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,12 +280,12 @@
             this.Controls.Add(this.listBoxDescription);
             this.Controls.Add(this.btnTaBort2);
             this.Controls.Add(this.btnSpara2);
-            this.Controls.Add(this.btnNy2);
+            this.Controls.Add(this.btnNewCategory);
             this.Controls.Add(this.labelPodBeskrivning);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.btnNy);
-            this.Controls.Add(this.textBoxKategori);
+            this.Controls.Add(this.textBoxCategory);
             this.Controls.Add(this.lblKategori2);
             this.Controls.Add(this.lblPodcastInfo);
             this.Controls.Add(this.comboBoxCategory);
@@ -311,13 +313,12 @@
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Label lblPodcastInfo;
         private System.Windows.Forms.Label lblKategori2;
-        private System.Windows.Forms.TextBox textBoxKategori;
+        private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.Button btnNy;
         private System.Windows.Forms.Button btnSpara;
         private System.Windows.Forms.Button btnTaBort;
         private System.Windows.Forms.Label labelPodBeskrivning;
-        private System.Windows.Forms.Button btnNy2;
-        private System.Windows.Forms.Button btnSpara2;
+        private System.Windows.Forms.Button btnNewCategory;
         private System.Windows.Forms.Button btnTaBort2;
         private System.Windows.Forms.ListBox listBoxDescription;
         private System.Windows.Forms.ListBox listBox2;
@@ -327,6 +328,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAvsnitt;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFrequence;
+        private System.Windows.Forms.Button btnSpara2;
     }
 }
 

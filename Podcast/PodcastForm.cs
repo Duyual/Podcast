@@ -19,20 +19,27 @@ namespace Podcast_GUI
 
         private PodcastCollection podcasts;
         private Podcast selectedPod;
+        CategoryHandler categoryHandler;
 
         public PodcastForm()
         {
             InitializeComponent();
 
             PodcastHandler podHandler = new PodcastHandler();
+            categoryHandler = new CategoryHandler();
+
             podHandler.StartUpdateFeed();
             //Get data from file
             podcasts = new PodcastCollection();
             podcasts = podcasts.Deserialize();
-            AddPodcasts();
-            //RemovePodcasts();
-            //Update UI
-            UpdateUI();
+            if (podcasts != null)
+            {
+                AddPodcastsUI();
+                //Update UI
+                UpdateUI();
+            }
+
+            AddCategoriesUI();
 
         }
 
@@ -44,16 +51,21 @@ namespace Podcast_GUI
                 PodcastCollection pod = new PodcastCollection();
                 pod = pod.Deserialize();
 
-                //If new changes to podcast file
-                if (!pod.Equals(podcasts))
+                if (pod != null)
                 {
-                    RemovePodcasts();
-                    AddPodcasts();
+                    //If new changes to podcast file
+                    if (!pod.Equals(podcasts))
+                    {
+                        //Change podcast
+                        podcasts = pod;
+                        RemovePodcastsUI();
+                        AddPodcastsUI();
+                    }
                 }
             }
         }
 
-        public void AddPodcasts()
+        public void AddPodcastsUI()
         {
             foreach(Podcast pod in podcasts)
             {
@@ -68,9 +80,31 @@ namespace Podcast_GUI
             }
         }
 
-        public void RemovePodcasts()
+        public void RemovePodcastsUI()
         {
             gwdPodcasts.Rows.Clear();
+        }
+
+        public void AddCategoriesUI()
+        {
+            Categories categories = categoryHandler.fetchCategories();
+            if (categories != null)
+            {
+                foreach (string category in categories)
+                {
+                    //ListBox
+                    listBoxCategory.Items.Add(category);
+                    //ComboBox
+                    comboBoxCategory.Items.Add(category);
+                }
+
+            }
+        }
+
+        public void AddCategoryUI(string category)
+        {
+            listBoxCategory.Items.Add(category);
+            comboBoxCategory.Items.Add(category);
         }
 
         private void listBox12_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,6 +118,23 @@ namespace Podcast_GUI
                 }
             }
             
+        }
+
+        private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNewCategory_Click(object sender, EventArgs e)
+        {
+            if (textBoxCategory.Text != "")
+            {
+                //If added
+                if (categoryHandler.addCategory(textBoxCategory.Text))
+                {
+                    AddCategoryUI(textBoxCategory.Text);
+                }
+            }
         }
     }
 }

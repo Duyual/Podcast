@@ -18,6 +18,8 @@ namespace Podcast_GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            PodcastHandler ph = new PodcastHandler();
+            //ph.fetchPodcasts();
             Application.Run(new PodcastForm());
         }
     }

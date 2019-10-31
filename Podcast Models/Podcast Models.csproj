@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\ISerialize.cs" />
+    <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\PodcastCollection.cs" />
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\Podcast.cs" />

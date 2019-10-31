@@ -18,12 +18,12 @@ namespace Podcast_BLL
         public async void fetchPodcasts()
         {
             PodcastReader pr = new PodcastReader();
-            Podcast joerog = await pr.ReadPodcastRSS("http://joeroganexp.joerogan.libsynpro.com/rss");
-            Podcast ajt = await pr.ReadPodcastRSS("https://feeds.megaphone.fm/ADL9840290619");
-            joerog.UpdateInterval = 5;
+            //Podcast joerog = await pr.ReadPodcastRSS("http://joeroganexp.joerogan.libsynpro.com/rss");
+            Podcast ajt = await pr.ReadPodcastRSS("http://feeds.soundcloud.com/users/soundcloud:users:118147039/sounds.rss?fbclid=IwAR0UHQZF3GhpNmuazs4-Kw7K6--IzB0AZjQQ-4QqKOmCKqQqeGi6xdMweQo");
+            //joerog.UpdateInterval = 5;
             ajt.UpdateInterval = 2;
             PodcastCollection podColl = new PodcastCollection();
-            podColl.Add(joerog);
+            //podColl.Add(joerog);
             podColl.Add(ajt);
             Debug.WriteLine(podColl[0].UpdateInterval);
             podColl.Serialize();
@@ -34,12 +34,15 @@ namespace Podcast_BLL
             PodcastCollection podColl = new PodcastCollection();
             podColl = podColl.Deserialize();
             //Add update interval
-            List<Task> tasks = new List<Task>();
-            foreach (Podcast pod in podColl)
+            if (podColl != null)
             {
-                Debug.WriteLine("periodic started");
-                Debug.WriteLine(pod.UpdateInterval);
-                tasks.Add(PeriodicUpdateFeed(podColl, pod, new CancellationToken()));
+                List<Task> tasks = new List<Task>();
+                foreach (Podcast pod in podColl)
+                {
+                    Debug.WriteLine("periodic started");
+                    Debug.WriteLine(pod.UpdateInterval);
+                    tasks.Add(PeriodicUpdateFeed(podColl, pod, new CancellationToken()));
+                }
             }
 
         }
@@ -68,7 +71,7 @@ namespace Podcast_BLL
                 //If the podcast isn't the same, change it.
                 if (!newPod.Equals(oldPod))
                 {
-                    int updateInterval = podcastColl[oldIndex].UpdateInterval;
+                    int updateInterval = oldPod.UpdateInterval;
                     podcastColl[oldIndex] = newPod;
                     podcastColl[oldIndex].UpdateInterval = updateInterval;
                     //INSERT UPDATEINTERVAL INTO podcastColl[oldIndex] HERE FROM FORM
