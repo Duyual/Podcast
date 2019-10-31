@@ -43,16 +43,16 @@
             this.lblPodcastInfo = new System.Windows.Forms.Label();
             this.lblKategori2 = new System.Windows.Forms.Label();
             this.textBoxKategori = new System.Windows.Forms.TextBox();
-            this.btnNy = new System.Windows.Forms.Button();
             this.btnSpara = new System.Windows.Forms.Button();
             this.btnTaBort = new System.Windows.Forms.Button();
             this.labelPodBeskrivning = new System.Windows.Forms.Label();
             this.btnNy2 = new System.Windows.Forms.Button();
-            this.btnSpara2 = new System.Windows.Forms.Button();
             this.btnTaBort2 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
+            this.btnNy = new System.Windows.Forms.Button();
+            this.btnSpara2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,15 +172,6 @@
             this.textBoxKategori.TabIndex = 12;
             this.textBoxKategori.TextChanged += new System.EventHandler(this.textBoxKategori_TextChanged);
             // 
-            // btnNy
-            // 
-            this.btnNy.Location = new System.Drawing.Point(31, 193);
-            this.btnNy.Name = "btnNy";
-            this.btnNy.Size = new System.Drawing.Size(80, 23);
-            this.btnNy.TabIndex = 13;
-            this.btnNy.Text = "Ny";
-            this.btnNy.UseVisualStyleBackColor = true;
-            // 
             // btnSpara
             // 
             this.btnSpara.Location = new System.Drawing.Point(139, 193);
@@ -218,15 +209,6 @@
             this.btnNy2.UseVisualStyleBackColor = true;
             this.btnNy2.Click += new System.EventHandler(this.btnNy2_Click);
             // 
-            // btnSpara2
-            // 
-            this.btnSpara2.Location = new System.Drawing.Point(606, 415);
-            this.btnSpara2.Name = "btnSpara2";
-            this.btnSpara2.Size = new System.Drawing.Size(58, 23);
-            this.btnSpara2.TabIndex = 19;
-            this.btnSpara2.Text = "Spara";
-            this.btnSpara2.UseVisualStyleBackColor = true;
-            // 
             // btnTaBort2
             // 
             this.btnTaBort2.Location = new System.Drawing.Point(688, 415);
@@ -261,13 +243,31 @@
             this.listBox3.Size = new System.Drawing.Size(211, 95);
             this.listBox3.TabIndex = 23;
             // 
+            // btnNy
+            // 
+            this.btnNy.Location = new System.Drawing.Point(31, 193);
+            this.btnNy.Name = "btnNy";
+            this.btnNy.Size = new System.Drawing.Size(80, 23);
+            this.btnNy.TabIndex = 13;
+            this.btnNy.Text = "Ny";
+            this.btnNy.UseVisualStyleBackColor = true;
+            // 
+            // btnSpara2
+            // 
+            this.btnSpara2.Location = new System.Drawing.Point(606, 415);
+            this.btnSpara2.Name = "btnSpara2";
+            this.btnSpara2.Size = new System.Drawing.Size(58, 23);
+            this.btnSpara2.TabIndex = 19;
+            this.btnSpara2.Text = "Spara";
+            this.btnSpara2.UseVisualStyleBackColor = true;
+            // 
             // Podcast
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(798, 457);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
@@ -313,16 +313,16 @@
         private System.Windows.Forms.Label lblPodcastInfo;
         private System.Windows.Forms.Label lblKategori2;
         private System.Windows.Forms.TextBox textBoxKategori;
-        private System.Windows.Forms.Button btnNy;
         private System.Windows.Forms.Button btnSpara;
         private System.Windows.Forms.Button btnTaBort;
         private System.Windows.Forms.Label labelPodBeskrivning;
         private System.Windows.Forms.Button btnNy2;
-        private System.Windows.Forms.Button btnSpara2;
         private System.Windows.Forms.Button btnTaBort2;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Button btnNy;
+        private System.Windows.Forms.Button btnSpara2;
     }
 }
 
