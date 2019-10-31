@@ -21,5 +21,24 @@ namespace Podcast
         {
 
         }
+
+        private void btnNy2_Click(object sender, EventArgs e)
+        {
+            if (this.textBoxKategori.Text != "")
+            {
+                listBox3.Items.Add(this.textBoxKategori.Text);
+                comboBoxKategori.Items.Add(this.textBoxKategori.Text);
+                this.textBoxKategori.Focus();
+                this.textBoxKategori.Clear();
+            } else {
+
+
+            }
+        }
+
+        private void textBoxKategori_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

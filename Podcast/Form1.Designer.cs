@@ -95,6 +95,7 @@
             // 
             // comboBoxUppdatering
             // 
+            this.comboBoxUppdatering.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxUppdatering.FormattingEnabled = true;
             this.comboBoxUppdatering.Location = new System.Drawing.Point(391, 48);
             this.comboBoxUppdatering.Name = "comboBoxUppdatering";
@@ -103,6 +104,7 @@
             // 
             // comboBoxKategori
             // 
+            this.comboBoxKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKategori.FormattingEnabled = true;
             this.comboBoxKategori.Location = new System.Drawing.Point(232, 48);
             this.comboBoxKategori.Name = "comboBoxKategori";
@@ -168,6 +170,7 @@
             this.textBoxKategori.Name = "textBoxKategori";
             this.textBoxKategori.Size = new System.Drawing.Size(222, 20);
             this.textBoxKategori.TabIndex = 12;
+            this.textBoxKategori.TextChanged += new System.EventHandler(this.textBoxKategori_TextChanged);
             // 
             // btnNy
             // 
@@ -213,6 +216,7 @@
             this.btnNy2.TabIndex = 18;
             this.btnNy2.Text = "Ny";
             this.btnNy2.UseVisualStyleBackColor = true;
+            this.btnNy2.Click += new System.EventHandler(this.btnNy2_Click);
             // 
             // btnSpara2
             // 
@@ -254,11 +258,12 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Location = new System.Drawing.Point(529, 261);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(222, 95);
+            this.listBox3.Size = new System.Drawing.Size(211, 95);
             this.listBox3.TabIndex = 23;
             // 
             // Podcast
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
