@@ -17,6 +17,7 @@ namespace Podcast_Models.Models
         }
         public PodcastCollection Deserialize()
         {
+            CreateFileIfNotExists("podcast.json");
             JsonSerializer serializer = new JsonSerializer();
             using (StreamReader reader = new StreamReader("podcast.json"))
             {
@@ -24,6 +25,14 @@ namespace Podcast_Models.Models
                 {
                     return serializer.Deserialize<PodcastCollection>(jsonReader);
                 }
+            }
+        }
+
+        public void CreateFileIfNotExists(string filename)
+        {
+            if (!File.Exists(filename))
+            {
+                File.Create(filename);
             }
         }
 

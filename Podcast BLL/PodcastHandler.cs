@@ -29,6 +29,31 @@ namespace Podcast_BLL
             podColl.Serialize();
         }
 
+        public async void AddPodcast(string link, string category, int update)
+        {
+            PodcastReader pr = new PodcastReader();
+            Podcast newPod = await pr.ReadPodcastRSS(link);
+            newPod.UpdateInterval = update;
+            newPod.Category = category;
+            PodcastCollection podColl = new PodcastCollection();
+            podColl = podColl.Deserialize();
+            podColl.Add(newPod);
+            podColl.Serialize();
+        }
+
+        public async Task UpdatePodcast(Podcast pod, string link, string category, int update)
+        {
+            PodcastReader pr = new PodcastReader();
+            Podcast newPod = await pr.ReadPodcastRSS(link);
+            newPod.UpdateInterval = update;
+            newPod.Category = category;
+            PodcastCollection podColl = new PodcastCollection();
+            podColl = podColl.Deserialize();
+            int index = podColl.FindIndex(item => item.Equals(pod));
+            podColl[index] = newPod;
+            podColl.Serialize();
+        }
+
         public void StartUpdateFeed()
         {
             PodcastCollection podColl = new PodcastCollection();
