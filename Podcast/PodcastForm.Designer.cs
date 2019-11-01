@@ -40,7 +40,6 @@
             this.btnRemovePodcast = new System.Windows.Forms.Button();
             this.btnNewCategory = new System.Windows.Forms.Button();
             this.btnTaBort2 = new System.Windows.Forms.Button();
-            this.listBoxDescription = new System.Windows.Forms.ListBox();
             this.listBoxCategory = new System.Windows.Forms.ListBox();
             this.gwdPodcasts = new System.Windows.Forms.DataGridView();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +58,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelNav = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gwdPodcasts)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,7 +117,7 @@
             // 
             this.lblPodcastInfo.AutoSize = true;
             this.lblPodcastInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPodcastInfo.Location = new System.Drawing.Point(277, 583);
+            this.lblPodcastInfo.Location = new System.Drawing.Point(277, 564);
             this.lblPodcastInfo.Name = "lblPodcastInfo";
             this.lblPodcastInfo.Size = new System.Drawing.Size(273, 31);
             this.lblPodcastInfo.TabIndex = 8;
@@ -125,7 +126,7 @@
             // textBoxCategory
             // 
             this.textBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCategory.Location = new System.Drawing.Point(20, 666);
+            this.textBoxCategory.Location = new System.Drawing.Point(16, 655);
             this.textBoxCategory.Name = "textBoxCategory";
             this.textBoxCategory.Size = new System.Drawing.Size(222, 31);
             this.textBoxCategory.TabIndex = 12;
@@ -137,9 +138,9 @@
             this.btnNewPodcast.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnNewPodcast.FlatAppearance.BorderSize = 0;
             this.btnNewPodcast.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewPodcast.Location = new System.Drawing.Point(86, 396);
+            this.btnNewPodcast.Location = new System.Drawing.Point(76, 396);
             this.btnNewPodcast.Name = "btnNewPodcast";
-            this.btnNewPodcast.Size = new System.Drawing.Size(96, 39);
+            this.btnNewPodcast.Size = new System.Drawing.Size(106, 39);
             this.btnNewPodcast.TabIndex = 13;
             this.btnNewPodcast.Text = "Ny";
             this.btnNewPodcast.UseVisualStyleBackColor = false;
@@ -150,9 +151,9 @@
             this.btnSave.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(86, 441);
+            this.btnSave.Location = new System.Drawing.Point(76, 441);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(96, 44);
+            this.btnSave.Size = new System.Drawing.Size(106, 44);
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Spara";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -163,9 +164,9 @@
             this.btnRemovePodcast.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnRemovePodcast.FlatAppearance.BorderSize = 0;
             this.btnRemovePodcast.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemovePodcast.Location = new System.Drawing.Point(86, 491);
+            this.btnRemovePodcast.Location = new System.Drawing.Point(76, 491);
             this.btnRemovePodcast.Name = "btnRemovePodcast";
-            this.btnRemovePodcast.Size = new System.Drawing.Size(96, 45);
+            this.btnRemovePodcast.Size = new System.Drawing.Size(106, 45);
             this.btnRemovePodcast.TabIndex = 15;
             this.btnRemovePodcast.Text = "Ta Bort";
             this.btnRemovePodcast.UseVisualStyleBackColor = true;
@@ -175,7 +176,7 @@
             // 
             this.btnNewCategory.FlatAppearance.BorderSize = 0;
             this.btnNewCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCategory.Location = new System.Drawing.Point(9, 703);
+            this.btnNewCategory.Location = new System.Drawing.Point(9, 692);
             this.btnNewCategory.Name = "btnNewCategory";
             this.btnNewCategory.Size = new System.Drawing.Size(53, 36);
             this.btnNewCategory.TabIndex = 18;
@@ -187,23 +188,12 @@
             // 
             this.btnTaBort2.FlatAppearance.BorderSize = 0;
             this.btnTaBort2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaBort2.Location = new System.Drawing.Point(160, 703);
+            this.btnTaBort2.Location = new System.Drawing.Point(160, 692);
             this.btnTaBort2.Name = "btnTaBort2";
             this.btnTaBort2.Size = new System.Drawing.Size(89, 36);
             this.btnTaBort2.TabIndex = 20;
             this.btnTaBort2.Text = "Ta bort";
             this.btnTaBort2.UseVisualStyleBackColor = true;
-            // 
-            // listBoxDescription
-            // 
-            this.listBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxDescription.FormattingEnabled = true;
-            this.listBoxDescription.ItemHeight = 18;
-            this.listBoxDescription.Location = new System.Drawing.Point(283, 618);
-            this.listBoxDescription.Name = "listBoxDescription";
-            this.listBoxDescription.Size = new System.Drawing.Size(250, 76);
-            this.listBoxDescription.TabIndex = 21;
-            this.listBoxDescription.SelectedIndexChanged += new System.EventHandler(this.listBox12_SelectedIndexChanged);
             // 
             // listBoxCategory
             // 
@@ -217,16 +207,21 @@
             // 
             // gwdPodcasts
             // 
+            this.gwdPodcasts.AllowUserToAddRows = false;
+            this.gwdPodcasts.AllowUserToDeleteRows = false;
+            this.gwdPodcasts.AllowUserToResizeColumns = false;
+            this.gwdPodcasts.AllowUserToResizeRows = false;
             this.gwdPodcasts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gwdPodcasts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
             this.colAvsnitt,
             this.colCategory,
             this.colFrequence});
-            this.gwdPodcasts.Location = new System.Drawing.Point(272, 19);
+            this.gwdPodcasts.Location = new System.Drawing.Point(277, 19);
             this.gwdPodcasts.Name = "gwdPodcasts";
+            this.gwdPodcasts.RowHeadersVisible = false;
             this.gwdPodcasts.RowHeadersWidth = 51;
-            this.gwdPodcasts.Size = new System.Drawing.Size(576, 561);
+            this.gwdPodcasts.Size = new System.Drawing.Size(555, 542);
             this.gwdPodcasts.TabIndex = 24;
             this.gwdPodcasts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gwdPodcasts_CellContentClick);
             // 
@@ -262,7 +257,7 @@
             // 
             this.btnSpara2.FlatAppearance.BorderSize = 0;
             this.btnSpara2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpara2.Location = new System.Drawing.Point(68, 703);
+            this.btnSpara2.Location = new System.Drawing.Point(68, 692);
             this.btnSpara2.Name = "btnSpara2";
             this.btnSpara2.Size = new System.Drawing.Size(86, 36);
             this.btnSpara2.TabIndex = 19;
@@ -274,7 +269,7 @@
             this.listBoxPodcasts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPodcasts.FormattingEnabled = true;
             this.listBoxPodcasts.ItemHeight = 20;
-            this.listBoxPodcasts.Location = new System.Drawing.Point(599, 618);
+            this.listBoxPodcasts.Location = new System.Drawing.Point(599, 596);
             this.listBoxPodcasts.Name = "listBoxPodcasts";
             this.listBoxPodcasts.Size = new System.Drawing.Size(233, 84);
             this.listBoxPodcasts.TabIndex = 25;
@@ -345,7 +340,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(23, 81);
+            this.label1.Location = new System.Drawing.Point(31, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 20);
             this.label1.TabIndex = 17;
@@ -355,7 +350,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(233, 131);
@@ -370,40 +365,57 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.gwdPodcasts);
             this.panel2.Controls.Add(this.listBoxPodcasts);
-            this.panel2.Controls.Add(this.listBoxDescription);
             this.panel2.Controls.Add(this.lblPodcastInfo);
             this.panel2.Location = new System.Drawing.Point(0, 36);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(863, 713);
+            this.panel2.Size = new System.Drawing.Size(863, 730);
             this.panel2.TabIndex = 27;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(672, 583);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(666, 564);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 31);
+            this.label5.Size = new System.Drawing.Size(82, 29);
             this.label5.TabIndex = 26;
             this.label5.Text = "Följer";
             // 
             // panelNav
             // 
             this.panelNav.BackColor = System.Drawing.Color.IndianRed;
-            this.panelNav.Location = new System.Drawing.Point(5, -70);
+            this.panelNav.Location = new System.Drawing.Point(0, -70);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(907, 109);
+            this.panelNav.Size = new System.Drawing.Size(912, 109);
             this.panelNav.TabIndex = 28;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.IndianRed;
+            this.panel3.Location = new System.Drawing.Point(851, 24);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(24, 725);
+            this.panel3.TabIndex = 27;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.IndianRed;
+            this.panel4.Location = new System.Drawing.Point(253, 702);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(620, 36);
+            this.panel4.TabIndex = 27;
             // 
             // PodcastForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(862, 749);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelNav);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -435,7 +447,6 @@
         private System.Windows.Forms.Button btnRemovePodcast;
         private System.Windows.Forms.Button btnNewCategory;
         private System.Windows.Forms.Button btnTaBort2;
-        private System.Windows.Forms.ListBox listBoxDescription;
         private System.Windows.Forms.ListBox listBoxCategory;
         private System.Windows.Forms.DataGridView gwdPodcasts;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
@@ -454,6 +465,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelNav;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
