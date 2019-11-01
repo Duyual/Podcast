@@ -115,7 +115,7 @@
             // 
             this.lblPodcastInfo.AutoSize = true;
             this.lblPodcastInfo.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPodcastInfo.Location = new System.Drawing.Point(295, 583);
+            this.lblPodcastInfo.Location = new System.Drawing.Point(277, 583);
             this.lblPodcastInfo.Name = "lblPodcastInfo";
             this.lblPodcastInfo.Size = new System.Drawing.Size(274, 32);
             this.lblPodcastInfo.TabIndex = 8;
@@ -198,7 +198,7 @@
             this.listBoxDescription.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxDescription.FormattingEnabled = true;
             this.listBoxDescription.ItemHeight = 18;
-            this.listBoxDescription.Location = new System.Drawing.Point(319, 618);
+            this.listBoxDescription.Location = new System.Drawing.Point(301, 618);
             this.listBoxDescription.Name = "listBoxDescription";
             this.listBoxDescription.Size = new System.Drawing.Size(250, 94);
             this.listBoxDescription.TabIndex = 21;
@@ -222,10 +222,10 @@
             this.colAvsnitt,
             this.colCategory,
             this.colFrequence});
-            this.gwdPodcasts.Location = new System.Drawing.Point(278, 19);
+            this.gwdPodcasts.Location = new System.Drawing.Point(272, 19);
             this.gwdPodcasts.Name = "gwdPodcasts";
             this.gwdPodcasts.RowHeadersWidth = 51;
-            this.gwdPodcasts.Size = new System.Drawing.Size(570, 561);
+            this.gwdPodcasts.Size = new System.Drawing.Size(576, 561);
             this.gwdPodcasts.TabIndex = 24;
             this.gwdPodcasts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gwdPodcasts_CellContentClick);
             // 
@@ -365,7 +365,7 @@
             this.panel2.Controls.Add(this.lblPodcastInfo);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(862, 723);
+            this.panel2.Size = new System.Drawing.Size(862, 749);
             this.panel2.TabIndex = 27;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
