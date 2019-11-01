@@ -55,10 +55,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelNav = new System.Windows.Forms.Panel();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gwdPodcasts)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,7 +75,7 @@
             this.lblUrl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblUrl.Location = new System.Drawing.Point(92, 131);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(114, 52);
+            this.lblUrl.Size = new System.Drawing.Size(89, 39);
             this.lblUrl.TabIndex = 0;
             this.lblUrl.Text = "URL";
             this.lblUrl.Click += new System.EventHandler(this.lblUrl_Click);
@@ -82,7 +85,7 @@
             this.textBoxUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUrl.Location = new System.Drawing.Point(35, 176);
             this.textBoxUrl.Name = "textBoxUrl";
-            this.textBoxUrl.Size = new System.Drawing.Size(191, 26);
+            this.textBoxUrl.Size = new System.Drawing.Size(191, 22);
             this.textBoxUrl.TabIndex = 3;
             // 
             // comboBoxUpdate
@@ -99,7 +102,7 @@
             "60"});
             this.comboBoxUpdate.Location = new System.Drawing.Point(35, 357);
             this.comboBoxUpdate.Name = "comboBoxUpdate";
-            this.comboBoxUpdate.Size = new System.Drawing.Size(191, 38);
+            this.comboBoxUpdate.Size = new System.Drawing.Size(191, 33);
             this.comboBoxUpdate.TabIndex = 4;
             // 
             // comboBoxCategory
@@ -108,7 +111,7 @@
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(35, 263);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(191, 38);
+            this.comboBoxCategory.Size = new System.Drawing.Size(191, 33);
             this.comboBoxCategory.TabIndex = 5;
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
             // 
@@ -118,7 +121,7 @@
             this.lblPodcastInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPodcastInfo.Location = new System.Drawing.Point(277, 583);
             this.lblPodcastInfo.Name = "lblPodcastInfo";
-            this.lblPodcastInfo.Size = new System.Drawing.Size(336, 39);
+            this.lblPodcastInfo.Size = new System.Drawing.Size(273, 31);
             this.lblPodcastInfo.TabIndex = 8;
             this.lblPodcastInfo.Text = "Podcast information";
             // 
@@ -127,7 +130,7 @@
             this.textBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCategory.Location = new System.Drawing.Point(20, 666);
             this.textBoxCategory.Name = "textBoxCategory";
-            this.textBoxCategory.Size = new System.Drawing.Size(222, 37);
+            this.textBoxCategory.Size = new System.Drawing.Size(222, 31);
             this.textBoxCategory.TabIndex = 12;
             // 
             // btnNewPodcast
@@ -199,10 +202,10 @@
             // 
             this.listBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxCategory.FormattingEnabled = true;
-            this.listBoxCategory.ItemHeight = 29;
+            this.listBoxCategory.ItemHeight = 24;
             this.listBoxCategory.Location = new System.Drawing.Point(20, 585);
             this.listBoxCategory.Name = "listBoxCategory";
-            this.listBoxCategory.Size = new System.Drawing.Size(222, 33);
+            this.listBoxCategory.Size = new System.Drawing.Size(222, 28);
             this.listBoxCategory.TabIndex = 23;
             this.listBoxCategory.SelectedIndexChanged += new System.EventHandler(this.listBoxCategory_SelectedIndexChanged);
             // 
@@ -218,12 +221,12 @@
             this.colAvsnitt,
             this.colCategory,
             this.colFrequence});
-            this.gwdPodcasts.Location = new System.Drawing.Point(272, 19);
+            this.gwdPodcasts.Location = new System.Drawing.Point(271, 14);
             this.gwdPodcasts.Name = "gwdPodcasts";
             this.gwdPodcasts.ReadOnly = true;
             this.gwdPodcasts.RowHeadersVisible = false;
             this.gwdPodcasts.RowHeadersWidth = 51;
-            this.gwdPodcasts.Size = new System.Drawing.Size(576, 561);
+            this.gwdPodcasts.Size = new System.Drawing.Size(561, 561);
             this.gwdPodcasts.TabIndex = 24;
             this.gwdPodcasts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gwdPodcasts_CellClick);
             // 
@@ -275,10 +278,10 @@
             // 
             this.listBoxPodcasts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPodcasts.FormattingEnabled = true;
-            this.listBoxPodcasts.ItemHeight = 25;
+            this.listBoxPodcasts.ItemHeight = 20;
             this.listBoxPodcasts.Location = new System.Drawing.Point(599, 618);
             this.listBoxPodcasts.Name = "listBoxPodcasts";
-            this.listBoxPodcasts.Size = new System.Drawing.Size(233, 79);
+            this.listBoxPodcasts.Size = new System.Drawing.Size(233, 64);
             this.listBoxPodcasts.TabIndex = 25;
             this.listBoxPodcasts.SelectedIndexChanged += new System.EventHandler(this.listBoxPodcasts_SelectedIndexChanged);
             // 
@@ -316,7 +319,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(49, 539);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(213, 46);
+            this.label4.Size = new System.Drawing.Size(174, 37);
             this.label4.TabIndex = 24;
             this.label4.Text = "Kategorier";
             // 
@@ -327,7 +330,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(55, 312);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 52);
+            this.label3.Size = new System.Drawing.Size(148, 39);
             this.label3.TabIndex = 19;
             this.label3.Text = "Intervall";
             // 
@@ -338,7 +341,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(55, 218);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 52);
+            this.label2.Size = new System.Drawing.Size(154, 39);
             this.label2.TabIndex = 18;
             this.label2.Text = "Kategori";
             // 
@@ -349,7 +352,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(23, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 25);
+            this.label1.Size = new System.Drawing.Size(192, 20);
             this.label1.TabIndex = 17;
             this.label1.Text = "\"never miss a podcast\"";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -372,6 +375,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.textBoxDescription);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.gwdPodcasts);
@@ -379,9 +385,20 @@
             this.panel2.Controls.Add(this.lblPodcastInfo);
             this.panel2.Location = new System.Drawing.Point(0, 36);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(863, 713);
+            this.panel2.Size = new System.Drawing.Size(872, 730);
             this.panel2.TabIndex = 27;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // textBoxDescription
+            // 
+            this.textBoxDescription.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDescription.Location = new System.Drawing.Point(284, 618);
+            this.textBoxDescription.Multiline = true;
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.ReadOnly = true;
+            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxDescription.Size = new System.Drawing.Size(291, 64);
+            this.textBoxDescription.TabIndex = 27;
             // 
             // label5
             // 
@@ -389,7 +406,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(672, 583);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 39);
+            this.label5.Size = new System.Drawing.Size(88, 31);
             this.label5.TabIndex = 26;
             this.label5.Text = "Följer";
             // 
@@ -402,15 +419,28 @@
             this.panelNav.TabIndex = 28;
             this.panelNav.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelNav_MouseMove);
             // 
-            // textBoxDescription
+            // panel3
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(284, 618);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDescription.Size = new System.Drawing.Size(291, 79);
-            this.textBoxDescription.TabIndex = 27;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 100);
+            this.panel3.TabIndex = 28;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.IndianRed;
+            this.panel4.Location = new System.Drawing.Point(253, 697);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(638, 48);
+            this.panel4.TabIndex = 29;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.IndianRed;
+            this.panel5.Location = new System.Drawing.Point(853, -2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(122, 725);
+            this.panel5.TabIndex = 30;
             // 
             // PodcastForm
             // 
@@ -467,6 +497,9 @@
         private System.Windows.Forms.Panel panelNav;
         private System.Windows.Forms.DataGridView gwdPodcasts;
         private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
