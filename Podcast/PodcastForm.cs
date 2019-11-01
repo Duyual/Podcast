@@ -136,5 +136,15 @@ namespace Podcast_GUI
                 }
             }
         }
+
+        private void textBoxCategory_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
     }
 }

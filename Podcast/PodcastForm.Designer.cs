@@ -53,6 +53,7 @@
             this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFrequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSpara2 = new System.Windows.Forms.Button();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             ((System.ComponentModel.ISupportInitialize)(this.gwdPodcasts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             this.lblUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUrl.Location = new System.Drawing.Point(28, 18);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(46, 20);
+            this.lblUrl.Size = new System.Drawing.Size(38, 16);
             this.lblUrl.TabIndex = 0;
             this.lblUrl.Text = "URL";
             // 
@@ -72,7 +73,7 @@
             this.lblIntervall.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIntervall.Location = new System.Drawing.Point(388, 18);
             this.lblIntervall.Name = "lblIntervall";
-            this.lblIntervall.Size = new System.Drawing.Size(76, 20);
+            this.lblIntervall.Size = new System.Drawing.Size(63, 16);
             this.lblIntervall.TabIndex = 1;
             this.lblIntervall.Text = "Intervall";
             // 
@@ -82,7 +83,7 @@
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.Location = new System.Drawing.Point(229, 18);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(79, 20);
+            this.lblCategory.Size = new System.Drawing.Size(66, 16);
             this.lblCategory.TabIndex = 2;
             this.lblCategory.Text = "Kategori";
             // 
@@ -116,7 +117,7 @@
             this.lblPodcastInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPodcastInfo.Location = new System.Drawing.Point(27, 336);
             this.lblPodcastInfo.Name = "lblPodcastInfo";
-            this.lblPodcastInfo.Size = new System.Drawing.Size(177, 20);
+            this.lblPodcastInfo.Size = new System.Drawing.Size(145, 16);
             this.lblPodcastInfo.TabIndex = 8;
             this.lblPodcastInfo.Text = "Podcast information";
             // 
@@ -126,7 +127,7 @@
             this.lblKategori2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKategori2.Location = new System.Drawing.Point(612, 228);
             this.lblKategori2.Name = "lblKategori2";
-            this.lblKategori2.Size = new System.Drawing.Size(96, 20);
+            this.lblKategori2.Size = new System.Drawing.Size(80, 16);
             this.lblKategori2.TabIndex = 9;
             this.lblKategori2.Text = "Kategorier";
             // 
@@ -136,6 +137,7 @@
             this.textBoxCategory.Name = "textBoxCategory";
             this.textBoxCategory.Size = new System.Drawing.Size(222, 20);
             this.textBoxCategory.TabIndex = 12;
+            this.textBoxCategory.TextChanged += new System.EventHandler(this.textBoxCategory_TextChanged);
             // 
             // btnNy
             // 
@@ -169,7 +171,7 @@
             this.labelPodBeskrivning.AutoSize = true;
             this.labelPodBeskrivning.Location = new System.Drawing.Point(623, 18);
             this.labelPodBeskrivning.Name = "labelPodBeskrivning";
-            this.labelPodBeskrivning.Size = new System.Drawing.Size(41, 15);
+            this.labelPodBeskrivning.Size = new System.Drawing.Size(35, 13);
             this.labelPodBeskrivning.TabIndex = 17;
             this.labelPodBeskrivning.Text = "label1";
             // 
@@ -268,12 +270,21 @@
             this.btnSpara2.Text = "Spara";
             this.btnSpara2.UseVisualStyleBackColor = true;
             // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(22, 463);
+            this.splitter1.TabIndex = 25;
+            this.splitter1.TabStop = false;
+            // 
             // PodcastForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1159, 584);
+            this.ClientSize = new System.Drawing.Size(1159, 463);
+            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.gwdPodcasts);
             this.Controls.Add(this.listBoxCategory);
             this.Controls.Add(this.listBox2);
@@ -329,6 +340,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFrequence;
         private System.Windows.Forms.Button btnSpara2;
+        private System.Windows.Forms.Splitter splitter1;
     }
 }
 
