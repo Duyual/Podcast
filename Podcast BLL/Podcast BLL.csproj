@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryHandler.cs" />
+    <Compile Include="JsonHandler.cs" />
     <Compile Include="PodcastHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

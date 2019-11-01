@@ -20,19 +20,22 @@ namespace Podcast_GUI
         private PodcastCollection podcasts;
         private Podcast selectedPod;
         private PodcastHandler podHandler;
+        private JsonHandler jsonHandler;
         private CategoryHandler categoryHandler;
 
         public PodcastForm()
         {
             InitializeComponent();
+            //this.Scale(new SizeF(1f, 0.9f));
 
             podHandler = new PodcastHandler();
+            jsonHandler = new JsonHandler();
             categoryHandler = new CategoryHandler();
 
             podHandler.StartUpdateFeed();
             //Get data from file
-            podcasts = new PodcastCollection();
-            podcasts = podcasts.Deserialize();
+            podcasts = jsonHandler.FetchPodcasts();
+
             if (podcasts != null)
             {
                 AddPodcastsUI();

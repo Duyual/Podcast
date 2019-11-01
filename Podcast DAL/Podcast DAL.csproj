@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RSS\JsonReader.cs" />
     <Compile Include="RSS\PodcastReader.cs" />
     <Compile Include="RSS\PodcastWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
