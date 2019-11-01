@@ -62,7 +62,7 @@
             this.lblUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUrl.Location = new System.Drawing.Point(28, 18);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(46, 20);
+            this.lblUrl.Size = new System.Drawing.Size(38, 16);
             this.lblUrl.TabIndex = 0;
             this.lblUrl.Text = "URL";
             // 
@@ -72,7 +72,7 @@
             this.lblIntervall.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIntervall.Location = new System.Drawing.Point(388, 18);
             this.lblIntervall.Name = "lblIntervall";
-            this.lblIntervall.Size = new System.Drawing.Size(76, 20);
+            this.lblIntervall.Size = new System.Drawing.Size(63, 16);
             this.lblIntervall.TabIndex = 1;
             this.lblIntervall.Text = "Intervall";
             // 
@@ -82,7 +82,7 @@
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.Location = new System.Drawing.Point(229, 18);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(79, 20);
+            this.lblCategory.Size = new System.Drawing.Size(66, 16);
             this.lblCategory.TabIndex = 2;
             this.lblCategory.Text = "Kategori";
             // 
@@ -116,7 +116,7 @@
             this.lblPodcastInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPodcastInfo.Location = new System.Drawing.Point(27, 336);
             this.lblPodcastInfo.Name = "lblPodcastInfo";
-            this.lblPodcastInfo.Size = new System.Drawing.Size(177, 20);
+            this.lblPodcastInfo.Size = new System.Drawing.Size(145, 16);
             this.lblPodcastInfo.TabIndex = 8;
             this.lblPodcastInfo.Text = "Podcast information";
             // 
@@ -126,7 +126,7 @@
             this.lblKategori2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKategori2.Location = new System.Drawing.Point(612, 228);
             this.lblKategori2.Name = "lblKategori2";
-            this.lblKategori2.Size = new System.Drawing.Size(96, 20);
+            this.lblKategori2.Size = new System.Drawing.Size(80, 16);
             this.lblKategori2.TabIndex = 9;
             this.lblKategori2.Text = "Kategorier";
             // 
@@ -169,7 +169,7 @@
             this.labelPodBeskrivning.AutoSize = true;
             this.labelPodBeskrivning.Location = new System.Drawing.Point(623, 18);
             this.labelPodBeskrivning.Name = "labelPodBeskrivning";
-            this.labelPodBeskrivning.Size = new System.Drawing.Size(41, 15);
+            this.labelPodBeskrivning.Size = new System.Drawing.Size(35, 13);
             this.labelPodBeskrivning.TabIndex = 17;
             this.labelPodBeskrivning.Text = "label1";
             // 
@@ -227,6 +227,7 @@
             this.colFrequence});
             this.gwdPodcasts.Location = new System.Drawing.Point(31, 93);
             this.gwdPodcasts.Name = "gwdPodcasts";
+            this.gwdPodcasts.RowHeadersVisible = false;
             this.gwdPodcasts.RowHeadersWidth = 51;
             this.gwdPodcasts.Size = new System.Drawing.Size(557, 199);
             this.gwdPodcasts.TabIndex = 24;
