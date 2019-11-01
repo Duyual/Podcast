@@ -20,19 +20,22 @@ namespace Podcast_GUI
         private PodcastCollection podcasts;
         private Podcast selectedPod;
         private PodcastHandler podHandler;
+        private JsonHandler jsonHandler;
         private CategoryHandler categoryHandler;
 
         public PodcastForm()
         {
             InitializeComponent();
+            //this.Scale(new SizeF(1f, 0.9f));
 
             podHandler = new PodcastHandler();
+            jsonHandler = new JsonHandler();
             categoryHandler = new CategoryHandler();
 
             podHandler.StartUpdateFeed();
             //Get data from file
-            podcasts = new PodcastCollection();
-            podcasts = podcasts.Deserialize();
+            podcasts = jsonHandler.FetchPodcasts();
+
             if (podcasts != null)
             {
                 AddPodcastsUI();
@@ -91,6 +94,13 @@ namespace Podcast_GUI
             AddEpisodesUI(pod);
         }
 
+        public void UpdateEpisodesUI(PodcastCollection podColl)
+        {
+            RemoveEpisodesUI();
+            if(podColl != null)
+                AddEpisodesUI(podColl);
+        }
+
         public void AddEpisodesUI(Podcast pod)
         {
             string[] row = new string[4];
@@ -104,6 +114,22 @@ namespace Podcast_GUI
             }
         }
 
+        public void AddEpisodesUI(PodcastCollection podColl)
+        {
+            foreach(Podcast pod in podColl)
+            {
+                string[] row = new string[4];
+                row[0] = pod.Title;
+                row[2] = pod.Category;
+                row[3] = pod.UpdateInterval.ToString();
+                foreach (Episode episode in pod.Episodes)
+                {
+                    row[1] = episode.Title;
+                    gwdPodcasts.Rows.Add(row);
+                }
+            }
+        }
+
         public void RemoveEpisodesUI()
         {
             gwdPodcasts.Rows.Clear();
@@ -111,7 +137,7 @@ namespace Podcast_GUI
 
         public void AddCategoriesUI()
         {
-            Categories categories = categoryHandler.fetchCategories();
+            Categories categories = categoryHandler.FetchCategories();
             if (categories != null)
             {
                 foreach (string category in categories)
@@ -123,6 +149,12 @@ namespace Podcast_GUI
                 }
 
             }
+        }
+
+        public void RemoveCategoriesUI()
+        {
+            listBoxCategory.Items.Clear();
+            comboBoxCategory.Items.Clear();
         }
 
         public void AddCategoryUI(string category)
@@ -161,7 +193,7 @@ namespace Podcast_GUI
             if (textBoxCategory.Text != "")
             {
                 //If added
-                if (categoryHandler.addCategory(textBoxCategory.Text))
+                if (categoryHandler.AddCategory(textBoxCategory.Text))
                 {
                     AddCategoryUI(textBoxCategory.Text);
                 }
@@ -170,9 +202,11 @@ namespace Podcast_GUI
 
         private void listBoxPodcasts_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             //-1 = Out of bounds
             if (listBoxPodcasts.SelectedIndex != -1)
             {
+                listBoxCategory.SelectedIndices.Clear();
                 Podcast pod = listBoxPodcasts.SelectedItem as Podcast;
                 UpdateEpisodesUI(pod);
                 UpdatePodcastData(pod);
@@ -218,8 +252,9 @@ namespace Podcast_GUI
             int update = Int32.Parse(comboBoxUpdate.SelectedItem.ToString());
 
             await podHandler.UpdatePodcast(changedPod, link, category, update);
-            PodcastCollection podColl = new PodcastCollection();
-            podcasts = podColl.Deserialize();
+
+            podcasts = jsonHandler.FetchPodcasts();
+
             UpdatePodcastsUI();
         }
 
@@ -243,14 +278,78 @@ namespace Podcast_GUI
 
         }
 
-        private void gwdPodcasts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panelNav_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(Cursor.Position.X , Cursor.Position.Y);
+            }
+        }
+
+        private void listBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (listBoxCategory.SelectedIndex != -1)
+            {
+                listBoxPodcasts.SelectedIndices.Clear();
+                PodcastCollection podColl = new PodcastCollection();
+                podColl = jsonHandler.FetchPodcasts(listBoxCategory.SelectedItem.ToString());
+                UpdateEpisodesUI(podColl);
+            }
+        }
+
+        private void btnSpara2_Click(object sender, EventArgs e)
+        {
+            if (listBoxCategory.SelectedIndex != -1)
+            {
+                string changedCategory = listBoxCategory.SelectedItem.ToString();
+                int index = listBoxCategory.SelectedIndex;
+
+                //Update category.json
+                categoryHandler.UpdateCategory(listBoxCategory.SelectedItem.ToString(), textBoxCategory.Text);
+                //fetch new info from podcasts
+
+                RemoveCategoriesUI();
+                AddCategoriesUI();
+                listBoxCategory.SelectedIndex = index;
+            }
+        }
+
+        private void btnTaBort2_Click(object sender, EventArgs e)
+        {
+            if (listBoxCategory.SelectedIndex != -1)
+            {
+                string removedCategory = listBoxCategory.SelectedItem.ToString();
+                categoryHandler.RemoveCategory(removedCategory);
+
+                RemoveCategoriesUI();
+                AddCategoriesUI();
+            }
+        }
+
+        private void gwdPodcasts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (Podcast pod in podcasts)
+            {
+                int index = gwdPodcasts.CurrentRow.Index;
+                if (pod.Title.Equals(gwdPodcasts.Rows[index].Cells[0].Value)) {
+                    foreach (Episode episode in pod.Episodes)
+                    {
+                        if (episode.Title.Equals(gwdPodcasts.Rows[index].Cells[1].Value))
+                        {
+                            textBoxDescription.Text = episode.Description;
+                            return;
+                        }
+                    }
+                }
+            }
+            //textBoxDescription.Text = podcasts[gwdPodcasts.CurrentRow.Index];
         }
     }
 }

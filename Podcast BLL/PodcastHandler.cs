@@ -15,7 +15,7 @@ namespace Podcast_BLL
     {
 
         //Används för test
-        public async void fetchPodcasts()
+        /*public async void fetchPodcasts()
         {
             PodcastReader pr = new PodcastReader();
             //Podcast joerog = await pr.ReadPodcastRSS("http://joeroganexp.joerogan.libsynpro.com/rss");
@@ -27,7 +27,7 @@ namespace Podcast_BLL
             podColl.Add(ajt);
             Debug.WriteLine(podColl[0].UpdateInterval);
             podColl.Serialize();
-        }
+        }*/
 
         public async void AddPodcast(string link, string category, int update)
         {
