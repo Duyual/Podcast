@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Podcast_BLL;
+using Podcast_Models.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Podcast
+namespace Podcast_GUI
 {
     static class Program
     {
@@ -16,7 +18,9 @@ namespace Podcast
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Podcast());
+            PodcastHandler ph = new PodcastHandler();
+            //ph.fetchPodcasts();
+            Application.Run(new PodcastForm());
         }
     }
 }

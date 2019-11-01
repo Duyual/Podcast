@@ -17,10 +17,12 @@ namespace Podcast_DAL.RSS
 
         }
 
-        public async Task<Podcast> readPodcastRSS(string url)
+        public async Task<Podcast> ReadPodcastRSS(string url)
         {
             Podcast podcast = new Podcast();
+            podcast.Link = url;
             List<Episode> episodes = new List<Episode>();
+
             XmlReaderSettings xrs = new XmlReaderSettings();
             xrs.Async = true;
 
@@ -53,7 +55,6 @@ namespace Podcast_DAL.RSS
                                     {
                                         case "title":
                                             episode.Title = itemReader.ReadElementContentAsString();
-                                            Debug.WriteLine(episode.Title);
                                             break;
                                         case "description":
                                             episode.Description = itemReader.ReadElementContentAsString();

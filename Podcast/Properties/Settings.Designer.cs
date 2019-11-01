@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Podcast.Properties
+namespace Podcast_GUI.Properties
 {
 
 
