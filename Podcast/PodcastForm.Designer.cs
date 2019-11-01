@@ -79,7 +79,7 @@
             // textBoxUrl
             // 
             this.textBoxUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUrl.Location = new System.Drawing.Point(26, 220);
+            this.textBoxUrl.Location = new System.Drawing.Point(74, 228);
             this.textBoxUrl.Name = "textBoxUrl";
             this.textBoxUrl.Size = new System.Drawing.Size(191, 26);
             this.textBoxUrl.TabIndex = 3;
