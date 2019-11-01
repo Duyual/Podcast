@@ -26,5 +26,10 @@ namespace Podcast_BLL
         {
             return reader.GetPodcasts(category);
         }
+
+        public void SavePodcasts(PodcastCollection podColl)
+        {
+            podColl.Serialize();
+        }
     }
 }

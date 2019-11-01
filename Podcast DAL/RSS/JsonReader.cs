@@ -1,6 +1,8 @@
-﻿using Podcast_Models.Models;
+﻿using Podcast_Models;
+using Podcast_Models.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +27,17 @@ namespace Podcast_DAL.RSS
             PodcastCollection podColl = new PodcastCollection();
             podColl = podColl.Deserialize();
 
-            return podColl.Where(p => p.Category.Equals(category))
-                .Select(p => p)
-                .ToList() as PodcastCollection;
+            List<Podcast> podcasts = (from pods in podColl
+                                      where pods.Category.Equals(category)
+                                      select pods).ToList();
+
+            PodcastCollection podCollCategory = new PodcastCollection();
+            foreach (Podcast pod in podcasts)
+            {
+                podCollCategory.Add(pod);
+            }
+
+            return podCollCategory;
         }
     }
 }
